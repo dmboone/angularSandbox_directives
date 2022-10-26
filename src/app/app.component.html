@@ -13,9 +13,10 @@
 
       <p *ngIf="isClicked">Secret Password = salmon</p>
       
-      <p *ngFor="let click of clicks"
+      <!-- can also grab the index when using ngFor as seen in line below -->
+      <p *ngFor="let click of clicks; let i = index"
           [ngStyle]="{backgroundColor: getBackgroundColor(click)}"
-          [ngClass]="{whiteColor: click >= 5}">
+          [ngClass]="{whiteColor: i + 1 >= 5}">
         Click {{click}}
       </p>
     </div>
